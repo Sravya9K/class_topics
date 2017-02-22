@@ -1,0 +1,53 @@
+<h2> Welcome to my first rails page </h2>
+
+
+<%= form_tag("/search", method: "get") do %>
+<%= label_tag(:q, "Search:")%>
+<%= text_field_tag(:q) %><br />
+
+
+<%= check_box_tag(:School) %>
+<%= label_tag(:School, "Name") %><br />
+<%= check_box_tag(:Branch) %>
+<%= label_tag(:Branch, "ID") %><br /><br /><br />
+
+<%= radio_button_tag(:student, "Yes") %>
+<%= label_tag(:student_Yes, "Alumini") %><br />
+<%= radio_button_tag(:student, "No") %>
+<%= label_tag(:student_No, "Present") %><br /><br />
+
+
+
+
+<%= text_area_tag(:message, "Welcome to DBHS", size: "18x1") %><br />
+<h4> Enter your password </h4>
+<%= password_field_tag(:password) %><br />
+<%= hidden_field_tag(:parent_id, "5") %><br />
+<h4>Search for products</h4>
+<%= search_field(:user, :name) %><br /><br />
+<h4> Enter your telephone number </h4>
+<%= telephone_field(:user, :phone) %><br /><br />
+<h4> Date of Birth</h4>
+<%= date_field(:user, :born_on) %><br /><br />
+<h4> Meeting Time </h4>
+<%= datetime_field(:user, :meeting_time) %><br /><br />
+<h4> Date of Graduation </h4>
+<%= datetime_local_field(:user, :graduation_day) %><br /><br />
+<h4> Month of Birthday </h4>
+<%= month_field(:user, :birthday_month) %><br /><br />
+<h4> Week of Birthday </h4>
+<%= week_field(:user, :birthday_week) %><br /><br />
+<h4> Website </h4>
+<%= url_field(:user, :homepage) %><br /><br />
+<h4> E-mail address </h4>
+<%= email_field(:user, :address) %><br /><br />
+<h4> Favorite Color </h4>
+<%= color_field(:user, :favorite_color) %><br /><br />
+<h4> Task starting time </h4>
+<%= time_field(:task, :started_at) %><br /><br />
+<h4> Price </h4>
+<%= number_field(:product, :price, in: 1.0..20.0, step: 0.5) %><br /><br />
+<h4> Discount </h4>
+<%= range_field(:product, :discount, in: 1..100) %><br /><br />
+<%= submit_tag("Search") %><br />
+<% end %>
